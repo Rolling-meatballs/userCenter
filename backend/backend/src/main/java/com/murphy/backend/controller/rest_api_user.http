@@ -1,0 +1,30 @@
+GET http://{{host}}:{{port}}/user/search
+
+###
+GET http://{{host}}:{{port}}/user/search
+Content-Type: application/json
+
+{
+  "username": "{{username}}"
+}
+###
+
+POST http://{{host}}:{{port}}/api/user/login
+Content-Type: application/json
+
+{
+  "userAccount": "{{userAccount}}",
+  "userPassword": "{{userPassword}}"
+}
+
+###
+POST http://{{host}}:{{port}}/user/register
+Content-Type: application/json
+
+{
+  "userAccount": "{{userAccount}}",
+  "userPassword": "{{userPassword}}",
+  "checkPassword": "{{userPassword}}"
+}
+
+###
