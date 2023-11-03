@@ -101,11 +101,6 @@ const TableList: React.FC = () => {
   const [currentRow, setCurrentRow] = useState<API.RuleListItem>();
   const [selectedRowsState, setSelectedRows] = useState<API.RuleListItem[]>([]);
 
-  console.log('actionRef', actionRef)
-  console.log('showDetail', showDetail)
-  console.log('currentRow', currentRow)
-  console.log('selectedRowsState', selectedRowsState)
-
   /**
    * @en-US International configuration
    * @zh-CN 国际化配置
@@ -123,8 +118,6 @@ const TableList: React.FC = () => {
       dataIndex: 'name',
       tip: 'The rule name is the unique key',
       render: (dom, entity) => {
-        console.log('dom', dom);
-        console.log('entity', entity);
         return (
           <a
             onClick={() => {
@@ -247,8 +240,6 @@ const TableList: React.FC = () => {
       ],
     },
   ];
-
-  console.log('columns', columns);
 
   return (
     <PageContainer>

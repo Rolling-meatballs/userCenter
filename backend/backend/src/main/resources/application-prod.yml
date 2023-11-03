@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: user_manage
+  # Database configuration
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/user_manage
+    username: postgres
+    password: 123456
+  # session configuration
+  session:
+    timeout: 86400
+#  jackson:
+#    time-zone: GMT+8
+#  jpa:
+#    properties:
+#      open-in-view: true
+#      hibernate:
+#        show_sql: false
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        hbm2ddl:
+#          auto: update
+#    database: postgresql
+
+server:
+    port: 8080
+    servlet:
+        context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # ??????
+      logic-delete-value: 1 # ?????????? 1?
+      logic-not-delete-value: 0 # ?????????? 0?
+
+
+

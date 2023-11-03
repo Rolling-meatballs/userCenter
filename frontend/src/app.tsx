@@ -33,6 +33,7 @@ export async function getInitialState(): Promise<{
   loading?: boolean;
   fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
+  alert(process.env.NODE_ENV === 'development' ? '开发环境' : '生产环境')
   const fetchUserInfo = async () => {
     try {
       const msg = await queryCurrentUser({
@@ -154,5 +155,5 @@ export const request: RequestConfig = {
   // baseURL: 'http://localhost:8080/api',
   timeout: 10000,
   ...errorConfig,
-
+  url: process.env.NODE_ENV === 'development'? 'http://localhost:8000' : 'http://129.211.61.16'
 };
